@@ -42,6 +42,14 @@ ul {
   justify-content: center;
 }
 
+.checkmark > svg {
+  display: none;
+}
+
+.checkbox-label input:checked ~ .checkmark > svg {
+  display: flex;
+}
+
 .checkbox-label:hover input ~ .checkmark {
   background-color: hsl(127, 100%, 82%);
 }

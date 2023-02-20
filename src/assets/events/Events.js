@@ -3,7 +3,7 @@ import CharacterFilters from "../filters/CharacterFilters";
 class Events {
   constructor() {}
 
-  setEvents() {
+  copyToClipboardEvent() {
     const copyToClipboard = document.getElementById("copy-to-clipboard");
     const characterFilters = new CharacterFilters();
     const generatePasswordButton = document.querySelector(
