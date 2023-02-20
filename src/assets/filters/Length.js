@@ -16,25 +16,121 @@ class Length {
     this.slider.addEventListener("input", (e) => {
       this.sliderValue.innerHTML = e.target.value;
       if (this.slider.value < 5) {
+        firstStrenthBar.classList.remove(
+          "too-weak",
+          "weak",
+          "medium",
+          "strong"
+        );
+        secondStrenthBar.classList.remove(
+          "too-weak",
+          "weak",
+          "medium",
+          "strong"
+        );
+        thirdStrenthBar.classList.remove(
+          "too-weak",
+          "weak",
+          "medium",
+          "strong"
+        );
+        fourthStrenthBar.classList.remove(
+          "too-weak",
+          "weak",
+          "medium",
+          "strong"
+        );
         firstStrenthBar.classList.add("too-weak");
-        secondStrenthBar.classList.remove("weak");
-        thirdStrenthBar.classList.remove("medium");
-        fourthStrenthBar.classList.remove("strong");
+
         sliderStrength.innerText = "TOO WEAK!";
       }
       if (this.slider.value > 5 && this.slider.value <= 9) {
+        firstStrenthBar.classList.remove(
+          "too-weak",
+          "weak",
+          "medium",
+          "strong"
+        );
+        secondStrenthBar.classList.remove(
+          "too-weak",
+          "weak",
+          "medium",
+          "strong"
+        );
+        thirdStrenthBar.classList.remove(
+          "too-weak",
+          "weak",
+          "medium",
+          "strong"
+        );
+        fourthStrenthBar.classList.remove(
+          "too-weak",
+          "weak",
+          "medium",
+          "strong"
+        );
         secondStrenthBar.classList.add("weak");
-        firstStrenthBar.classList.add("too-weak");
-        thirdStrenthBar.classList.remove("medium");
-        fourthStrenthBar.classList.remove("strong");
+        firstStrenthBar.classList.add("weak");
         sliderStrength.innerText = "WEAK";
       }
       if (this.slider.value > 10 && this.slider.value <= 15) {
+        firstStrenthBar.classList.remove(
+          "too-weak",
+          "weak",
+          "medium",
+          "strong"
+        );
+        secondStrenthBar.classList.remove(
+          "too-weak",
+          "weak",
+          "medium",
+          "strong"
+        );
+        thirdStrenthBar.classList.remove(
+          "too-weak",
+          "weak",
+          "medium",
+          "strong"
+        );
+        fourthStrenthBar.classList.remove(
+          "too-weak",
+          "weak",
+          "medium",
+          "strong"
+        );
+        firstStrenthBar.classList.add("medium");
+        secondStrenthBar.classList.add("medium");
         thirdStrenthBar.classList.add("medium");
-        fourthStrenthBar.classList.remove("strong");
         sliderStrength.innerText = "MEDIUM";
       }
       if (this.slider.value > 15 && this.slider.value <= 20) {
+        firstStrenthBar.classList.remove(
+          "too-weak",
+          "weak",
+          "medium",
+          "strong"
+        );
+        secondStrenthBar.classList.remove(
+          "too-weak",
+          "weak",
+          "medium",
+          "strong"
+        );
+        thirdStrenthBar.classList.remove(
+          "too-weak",
+          "weak",
+          "medium",
+          "strong"
+        );
+        fourthStrenthBar.classList.remove(
+          "too-weak",
+          "weak",
+          "medium",
+          "strong"
+        );
+        firstStrenthBar.classList.add("strong");
+        secondStrenthBar.classList.add("strong");
+        thirdStrenthBar.classList.add("strong");
         fourthStrenthBar.classList.add("strong");
         sliderStrength.innerText = "STRONG";
       }
