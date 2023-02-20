@@ -4,17 +4,22 @@
   background-color: hsl(248, 15%, 11%);
   padding: 0px 10px 0px 10px;
   margin-bottom: 20px;
+  font-size: medium;
+}
+
+.strength-container > div:first-child {
+  color: hsl(251, 9%, 53%);
 }
 
 .strength-meter {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 10px;
 }
 
 .strength-meter > div {
   display: flex;
-  gap: 10px;
+  gap: 5px;
 }
 
 .strength-meter > div > div {

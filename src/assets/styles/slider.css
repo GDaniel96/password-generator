@@ -8,13 +8,13 @@
 }
 
 .character-length > span {
-  font-size: 30px;
+  font-size: 25px;
   color: hsl(127, 100%, 82%);
 }
 
 .character-length > p {
   color: hsl(252, 11%, 91%);
-  font-size: larger;
+  font-size: large;
 }
 
 input[type="range"] {
@@ -23,7 +23,7 @@ input[type="range"] {
   accent-color: white;
   cursor: pointer;
   height: 8px;
-  width: 90%;
+  width: 100%;
   background-image: linear-gradient(hsl(127, 100%, 82%), hsl(127, 100%, 82%));
   background-size: 50% 100%;
   background-repeat: no-repeat;
