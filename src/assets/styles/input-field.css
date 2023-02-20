@@ -1,0 +1,24 @@
+.input-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 20px;
+  background-color: hsl(248, 10%, 15%);
+}
+
+.copy-to-clipboard-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.generated-password {
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 700;
+  font-size: 30px;
+  color: hsl(252, 11%, 91%);
+  width: 90%;
+  background: none;
+  border: none;
+  outline: none;
+}

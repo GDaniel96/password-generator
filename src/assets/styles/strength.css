@@ -1,0 +1,40 @@
+.strength-container {
+  display: flex;
+  justify-content: space-between;
+  background-color: hsl(248, 15%, 11%);
+  padding: 0px 10px 0px 10px;
+  margin-bottom: 20px;
+}
+
+.strength-meter {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.strength-meter > div {
+  display: flex;
+  gap: 10px;
+}
+
+.strength-meter > div > div {
+  height: 28px;
+  width: 10px;
+  border: 2px solid hsl(252, 11%, 91%);
+}
+
+.too-weak {
+  background-color: hsl(0, 91%, 63%);
+}
+
+.weak {
+  background-color: hsl(13, 95%, 66%);
+}
+
+.medium {
+  background-color: hsl(42, 91%, 68%);
+}
+
+.strong {
+  background-color: hsl(127, 100%, 82%);
+}
