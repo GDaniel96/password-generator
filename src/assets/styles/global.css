@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Abel&family=DM+Sans:wght@400;700&family=Montserrat:wght@500&family=Rajdhani:wght@300;400&family=Roboto&family=Rubik&display=swap");
 
-body {
+body,
+html {
   display: flex;
   justify-content: center;
   margin: 0px;
@@ -25,4 +26,18 @@ body {
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+
+@media screen and (min-width: 1400px) {
+  body {
+    width: 100%;
+  }
+
+  .data-container {
+    width: 35%;
+  }
+
+  .main-container > h2 {
+    font-size: xx-large;
+  }
 }

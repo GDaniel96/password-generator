@@ -22,3 +22,10 @@
   border: none;
   outline: none;
 }
+
+@media screen and (min-width: 1400px) {
+  .generated-password {
+    font-size: 30px;
+    width: 100%;
+  }
+}

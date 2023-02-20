@@ -43,3 +43,9 @@
 .strong {
   background-color: hsl(127, 100%, 82%);
 }
+
+@media screen and (min-width: 1440px) {
+  .strength-container {
+    font-size: larger;
+  }
+}

@@ -42,3 +42,14 @@ input[type="range"]:hover::-webkit-slider-thumb {
   border: 2px solid hsl(127, 100%, 82%);
   -webkit-appearance: none;
 }
+
+@media screen and (min-width: 1400px) {
+  .character-length > span {
+    font-size: 35px;
+  }
+
+  .character-length > p {
+    font-size: larger;
+    color: hsl(251, 9%, 53%);
+  }
+}
