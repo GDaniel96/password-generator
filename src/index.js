@@ -1,6 +1,5 @@
-import Length from "./assets/filters/Length";
-import Events from "./assets/events/Events";
-import PasswordView from "./assets/view/PasswordView";
+import Length from "./assets/views/LengthView";
+import App from "./assets/views/App";
 
 import "./assets/styles/global.css";
 import "./assets/styles/generate-password-button.css";
@@ -9,10 +8,6 @@ import "./assets/styles/slider.css";
 import "./assets/styles/strength.css";
 import "./assets/styles/filters.css";
 
-const passwordView = new PasswordView();
+const passwordView = new App();
 
 passwordView.render();
-
-const length = new Length();
-
-length.sliderController();
