@@ -1,10 +1,12 @@
+import StrengthView from "./StrengthView";
+
 const minimumPasswordLength = 1;
 const maximumPasswordLength = 20;
 
 class PasswordLengthView {
   constructor() {
     this.slider = document.querySelector(".character-length > .slider");
-
+    this.strengthView = new StrengthView();
     this.passwordLengthValue = document.querySelector(
       ".character-length > #value"
     );
@@ -20,7 +22,6 @@ class PasswordLengthView {
   setEvents() {
     this.slider.addEventListener("input", (e) => {
       this.sliderValue = e.target.value;
-      // this.updatePasswordStrengthView();
       this.render(e.target.value);
     });
   }
@@ -40,6 +41,7 @@ class PasswordLengthView {
     this.sliderValue = passwordLength;
     this.updateLengthPasswordValue();
     this.updateSliderColor();
+    this.strengthView.render(passwordLength);
   }
 }
 

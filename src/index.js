@@ -1,4 +1,3 @@
-import Length from "./assets/views/LengthView";
 import App from "./assets/views/App";
 
 import "./assets/styles/global.css";

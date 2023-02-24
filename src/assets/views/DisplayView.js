@@ -14,7 +14,6 @@ class PasswordDisplayView {
   }
 
   copyPasswordToClipboard() {
-    console.log(this);
     if (this.value === "") {
       alert("There is no password in the input field");
     } else {

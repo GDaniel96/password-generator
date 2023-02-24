@@ -1,7 +1,7 @@
 import PasswordDisplayView from "./DisplayView";
 import PasswordLengthView from "./LengthView";
 import FiltersView from "./FiltersView";
-import PasswordStrengthView from "./StrengthView";
+// import PasswordStrengthView from "./StrengthView";
 
 const uppercaseCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 const lowercaseCharacters = "abcdefghijklmnopqrstuvwxyz";
@@ -13,7 +13,7 @@ class App {
     this.displayView = new PasswordDisplayView();
     this.lengthView = new PasswordLengthView();
     this.filtersView = new FiltersView();
-    this.strengthView = new PasswordStrengthView();
+    // this.strengthView = new PasswordStrengthView();
     this.charactersHaystack = "";
     this.password = "";
     this.passwordLength = 10;
@@ -88,9 +88,7 @@ class App {
 
   render() {
     this.displayView.render(this.password);
-
     this.lengthView.render(this.passwordLength);
-    this.updateLengthOfPassword();
   }
 }
 
