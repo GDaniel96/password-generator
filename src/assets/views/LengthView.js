@@ -10,7 +10,6 @@ class PasswordLengthView {
     this.passwordLengthValue = document.querySelector(
       ".character-length > #value"
     );
-    // this.strengthBars = document.querySelectorAll(".strength-meter > div");
     this.setEvents();
     this.render();
   }

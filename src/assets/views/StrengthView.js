@@ -4,29 +4,27 @@ const secondStrenthBar = document.getElementById("second-bar");
 const thirdStrenthBar = document.getElementById("third-bar");
 const fourthStrenthBar = document.getElementById("fourth-bar");
 
-const strengthBars = document.querySelectorAll(".strength-bars");
-
-console.log(strengthBars[0].children);
-console.log(strengthBars);
+const strengthBars = document.querySelectorAll(".strength-bars > div");
 
 class PasswordStrengthView {
   constructor() {}
 
-  strengthTooWeak() {
-    firstStrenthBar.classList.remove("too-weak", "weak", "medium", "strong");
-    secondStrenthBar.classList.remove("too-weak", "weak", "medium", "strong");
-    thirdStrenthBar.classList.remove("too-weak", "weak", "medium", "strong");
-    fourthStrenthBar.classList.remove("too-weak", "weak", "medium", "strong");
-    firstStrenthBar.classList.add("too-weak");
+  removeClassesFromElements() {
+    strengthBars.forEach((element) => {
+      element.classList.remove("weak", "medium", "strong");
+    });
+  }
 
+  strengthTooWeak() {
+    this.removeClassesFromElements();
+
+    firstStrenthBar.classList.add("too-weak");
     sliderStrength.innerText = "TOO WEAK!";
   }
 
   weakStrength() {
-    firstStrenthBar.classList.remove("too-weak", "weak", "medium", "strong");
-    secondStrenthBar.classList.remove("too-weak", "weak", "medium", "strong");
-    thirdStrenthBar.classList.remove("too-weak", "weak", "medium", "strong");
-    fourthStrenthBar.classList.remove("too-weak", "weak", "medium", "strong");
+    this.removeClassesFromElements();
+
     secondStrenthBar.classList.add("weak");
     firstStrenthBar.classList.add("weak");
 
@@ -34,10 +32,8 @@ class PasswordStrengthView {
   }
 
   mediumStrength() {
-    firstStrenthBar.classList.remove("too-weak", "weak", "medium", "strong");
-    secondStrenthBar.classList.remove("too-weak", "weak", "medium", "strong");
-    thirdStrenthBar.classList.remove("too-weak", "weak", "medium", "strong");
-    fourthStrenthBar.classList.remove("too-weak", "weak", "medium", "strong");
+    this.removeClassesFromElements();
+
     firstStrenthBar.classList.add("medium");
     secondStrenthBar.classList.add("medium");
     thirdStrenthBar.classList.add("medium");
@@ -46,10 +42,8 @@ class PasswordStrengthView {
   }
 
   strongStrength() {
-    firstStrenthBar.classList.remove("too-weak", "weak", "medium", "strong");
-    secondStrenthBar.classList.remove("too-weak", "weak", "medium", "strong");
-    thirdStrenthBar.classList.remove("too-weak", "weak", "medium", "strong");
-    fourthStrenthBar.classList.remove("too-weak", "weak", "medium", "strong");
+    this.removeClassesFromElements();
+
     firstStrenthBar.classList.add("strong");
     secondStrenthBar.classList.add("strong");
     thirdStrenthBar.classList.add("strong");
@@ -61,6 +55,7 @@ class PasswordStrengthView {
   render(sliderValue) {
     if (sliderValue < 5) {
       this.strengthTooWeak();
+      this.removeClassesFromElements();
     }
     if (sliderValue > 5 && sliderValue <= 9) {
       this.weakStrength();
