@@ -6,13 +6,15 @@
   "private": true,
   "scripts": {
     "build": "webpack --config webpack.config.js",
-    "dev": "npx webpack serve --config webpack.config.js --open"
+    "dev": "npx webpack serve --config webpack.config.js --open",
+    "deploy": "gh-pages -d dist"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "css-loader": "^6.7.3",
+    "gh-pages": "^5.0.0",
     "html-webpack-plugin": "^5.5.0",
     "style-loader": "^3.3.1",
     "webpack": "^5.75.0",
