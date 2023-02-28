@@ -1,13 +1,20 @@
 const sliderStrength = document.querySelector(".strength-meter > h3");
-const firstStrenthBar = document.getElementById("first-bar");
-const secondStrenthBar = document.getElementById("second-bar");
-const thirdStrenthBar = document.getElementById("third-bar");
-const fourthStrenthBar = document.getElementById("fourth-bar");
 
 const strengthBars = document.querySelectorAll(".strength-bars > div");
 
+function mapRange(value, low1, high1, low2, high2) {
+  return Math.floor(low2 + ((high2 - low2) * (value - low1)) / (high1 - low1));
+}
+
+const classNames = ["too-weak", "weak", "medium", "strong"];
+
+const labels = ["TOO-WEAK", "WEAK", "MEDIUM", "STRONG"];
+
 class PasswordStrengthView {
-  constructor() {}
+  constructor() {
+    this.strength = 0;
+    this.label = "";
+  }
 
   removeClassesFromElements() {
     strengthBars.forEach((element) => {
@@ -15,57 +22,23 @@ class PasswordStrengthView {
     });
   }
 
-  strengthTooWeak() {
-    this.removeClassesFromElements();
-
-    firstStrenthBar.classList.add("too-weak");
-    sliderStrength.innerText = "TOO WEAK!";
+  updateLabel(value) {
+    sliderStrength.innerText = labels[value];
   }
 
-  weakStrength() {
+  updateStrengthBar(value) {
     this.removeClassesFromElements();
-
-    secondStrenthBar.classList.add("weak");
-    firstStrenthBar.classList.add("weak");
-
-    sliderStrength.innerText = "WEAK";
-  }
-
-  mediumStrength() {
-    this.removeClassesFromElements();
-
-    firstStrenthBar.classList.add("medium");
-    secondStrenthBar.classList.add("medium");
-    thirdStrenthBar.classList.add("medium");
-
-    sliderStrength.innerText = "MEDIUM";
-  }
-
-  strongStrength() {
-    this.removeClassesFromElements();
-
-    firstStrenthBar.classList.add("strong");
-    secondStrenthBar.classList.add("strong");
-    thirdStrenthBar.classList.add("strong");
-    fourthStrenthBar.classList.add("strong");
-
-    sliderStrength.innerText = "STRONG";
+    strengthBars.forEach((bar, index) => {
+      if (index <= value) {
+        bar.classList.add(classNames[value]);
+      }
+    });
   }
 
   render(sliderValue) {
-    if (sliderValue < 5) {
-      this.strengthTooWeak();
-      this.removeClassesFromElements();
-    }
-    if (sliderValue > 5 && sliderValue <= 9) {
-      this.weakStrength();
-    }
-    if (sliderValue > 10 && sliderValue <= 15) {
-      this.mediumStrength();
-    }
-    if (sliderValue > 15 && sliderValue <= 20) {
-      this.strongStrength();
-    }
+    const remappedValue = mapRange(sliderValue, 1, 20, 0, 3);
+    this.updateStrengthBar(remappedValue);
+    this.updateLabel(remappedValue);
   }
 }
 
